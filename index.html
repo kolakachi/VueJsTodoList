@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+	</head>
+  
+  <body>
+    <div class="list" id="app">
+        <h3 v-text="Message"></h3>
+        <p>click on desired item to delete</p>
+			
+      
+		    <div class="content">
+		      <input type="text" v-model="NewItem" placeholder="ADD A NEW ITEM"/>
+		      <input type="submit" name="submit" value="ADD"  @click="AddToList" />
+		    </div>
+				<div style="clear:both;"></div>
+        <div  id="lst">
+          <ul>
+
+         <li v-for="item in ListItems" v-on:click="DeleteThis">{{item.name}}</li>
+        </ul>
+        </div>
+				
+     
+      <button v-on:click="DeleteAll">DELETE ALL</button>
+    
+    </div>
+    
+
+    
+  </body>
+  <script src="js/vue.js"></script>
+ <script src="js/VueTodo.js"></script>
+</html>
